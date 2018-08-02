@@ -36,15 +36,8 @@
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:id="@+id/layout1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/main_name_tv_text"
@@ -52,128 +45,113 @@
                             android:layout_height="wrap_content"
                             android:text="@string/detail_main_name"
                             style="@style/MyLabelTextViews"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
 
                         <TextView
                             android:id="@+id/main_name_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/MyTextViews"
-                            tools:text="Main" />
+                            tools:text="Main"
+                            app:layout_constraintTop_toBottomOf="@+id/main_name_tv_text"/>
 
                         <View
+                            android:id="@+id/line1"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:background="@color/colorPrimary"/>
+                            android:background="@color/colorPrimary"
+                            app:layout_constraintTop_toBottomOf="@+id/main_name_tv"/>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layout2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintTop_toBottomOf="@+id/layout1">
-
-                        <TextView
+                   <TextView
                             android:id="@+id/also_known_tv_text"
                             style="@style/MyLabelTextViews"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/detail_also_known_as_label"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/line1"/>
 
                         <TextView
                             android:id="@+id/also_known_tv"
                             style="@style/MyTextViews"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="Also" />
-                        <View
+                            tools:text="Also"
+                            app:layout_constraintTop_toBottomOf="@+id/also_known_tv_text"/>
+
+                    <View
+                            android:id="@+id/line2"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:background="@color/colorPrimary"/>
+                            android:background="@color/colorPrimary"
+                            app:layout_constraintTop_toBottomOf="@+id/also_known_tv"/>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layout3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintTop_toBottomOf="@+id/layout2">
-
-                        <TextView
+                  <TextView
                             android:id="@+id/ingredients_tv_text"
                             style="@style/MyLabelTextViews"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/detail_ingredients_label"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/line2"/>
 
                         <TextView
                             android:id="@+id/ingredients_tv"
                             style="@style/MyTextViews"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="Ingid" />
+                            tools:text="Ingid"
+                            app:layout_constraintTop_toBottomOf="@+id/ingredients_tv_text"/>
+
                         <View
+                            android:id="@+id/line3"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:background="@color/colorPrimary"/>
+                            android:background="@color/colorPrimary"
+                            app:layout_constraintTop_toBottomOf="@+id/ingredients_tv"/>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layout4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintTop_toBottomOf="@+id/layout3">
-
-                        <TextView
+                  <TextView
                             android:id="@+id/origin_tv_text"
                             style="@style/MyLabelTextViews"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/detail_place_of_origin_label"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/line3"/>
 
                         <TextView
                             android:id="@+id/origin_tv"
                             style="@style/MyTextViews"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="place" />
+                            tools:text="place"
+                            app:layout_constraintTop_toBottomOf="@+id/origin_tv_text"/>
+
                         <View
+                            android:id="@+id/line4"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:background="@color/colorPrimary"/>
+                            android:background="@color/colorPrimary"
+                            app:layout_constraintTop_toBottomOf="@+id/origin_tv"/>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layout5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        app:layout_constraintTop_toBottomOf="@+id/layout4">
-
-                        <TextView
+                 <TextView
                             android:id="@+id/description_tv_text"
                             style="@style/MyLabelTextViews"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/detail_description_label"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/line4"/>
 
                         <TextView
                             android:id="@+id/description_tv"
@@ -182,16 +160,17 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/description_tv_text"
-                            tools:text="Desc" />
+                            tools:text="Desc"
+                            />
 
                         <View
+                            android:id="@+id/line5"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:background="@color/colorPrimary"/>
-
-                    </LinearLayout>
+                            android:background="@color/colorPrimary"
+                            app:layout_constraintTop_toBottomOf="@+id/description_tv"/>
                 </android.support.constraint.ConstraintLayout>
 
 

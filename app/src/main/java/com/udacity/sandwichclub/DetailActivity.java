@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
@@ -18,24 +17,32 @@ import org.w3c.dom.Text;
 
 import java.util.Locale;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
-    private TextView mPlaceOfOrigin;
-    private TextView mAlsoKnownAs;
-    private TextView mIngredients;
-    private TextView mDescription;
-    private ImageView mIngredientsIv;
-    private TextView mMainName;
+    @BindView(R.id.origin_tv)
+    TextView mPlaceOfOrigin;
+    @BindView(R.id.also_known_tv)
+    TextView mAlsoKnownAs;
+    @BindView(R.id.ingredients_tv)
+    TextView mIngredients;
+    @BindView(R.id.description_tv)
+    TextView mDescription;
+    @BindView(R.id.image_iv)
+    ImageView mIngredientsIv;
+    @BindView(R.id.main_name_tv)
+    TextView mMainName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_detail);
-            initView();
-
+            ButterKnife.bind(this);
             Intent intent = getIntent();
             if (intent == null) {
                 closeOnError();
@@ -92,15 +99,6 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-    }
-
-    private void initView(){
-        mIngredientsIv = findViewById(R.id.image_iv);
-        mPlaceOfOrigin = findViewById(R.id.origin_tv);
-        mAlsoKnownAs = findViewById(R.id.also_known_tv);
-        mIngredients = findViewById(R.id.ingredients_tv);
-        mDescription = findViewById(R.id.description_tv);
-        mMainName = findViewById(R.id.main_name_tv);
     }
 
     private void closeOnError() {
